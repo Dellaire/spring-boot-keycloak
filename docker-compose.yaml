@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+    start-keycloak:
+        image: jboss/keycloak:11.0.1
+        ports:
+            - "8080:8080"
+            - "9990:9990"
+        environment:
+            - KEYCLOAK_USER=admin
+            - KEYCLOAK_PASSWORD=admin
