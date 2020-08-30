@@ -23,4 +23,3 @@ curl -H "Authorization: Bearer <access_token>" "http://localhost:8081/protected"
 
 * https://medium.com/devops-dudes/securing-spring-boot-rest-apis-with-keycloak-1d760b2004e
 * https://stormpath.com/blog/where-to-store-your-jwts-cookies-vs-html5-web-storage
->>>>>>> refs/heads/security-config
