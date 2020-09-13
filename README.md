@@ -13,11 +13,17 @@ This is just a sandbox for playing around with Keycloak via Spring Boot Security
 
 ## Acquire Access Token
 
-curl -X POST --header "Content-Type: application/x-www-form-urlencoded" --data-urlencode "grant_type=password" --data-urlencode "client_id=testclient" --data-urlencode "<client_secret>" --data-urlencode "username=testuser" --data-urlencode "password=password" "http://localhost:8080/auth/realms/testrealm/protocol/openid-connect/token"
+curl -X POST --header "Content-Type: application/x-www-form-urlencoded" --data-urlencode "grant_type=password" --data-urlencode "client_id=testclient" --data-urlencode "client_secret=<client_secret>" --data-urlencode "username=testuser" --data-urlencode "password=password" "http://localhost:8080/auth/realms/testrealm/protocol/openid-connect/token"
 
 ## Call protected API
 
 curl -H "Authorization: Bearer <access_token>" "http://localhost:8081/protected"
+
+## Other URLs
+
+### Keycloak Public Key
+
+http://localhost:8080/auth/realms/testrealm/protocol/openid-connect/certs
 
 ## Useful Information
 

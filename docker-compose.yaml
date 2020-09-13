@@ -9,3 +9,4 @@ services:
         environment:
             - KEYCLOAK_USER=admin
             - KEYCLOAK_PASSWORD=admin
+            - KEYCLOAK_LOGLEVEL=DEBUG
