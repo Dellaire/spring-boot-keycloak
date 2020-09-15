@@ -9,11 +9,18 @@ This is just a sandbox for playing around with Keycloak via Spring Boot Security
 * set redirect address of client
 * make client confidential
 * create user "testuser" with password "password"
-* create role "testrole" and assign to user and realm (under "Composite Roles")
+* create role "testrole" and assign to user (needed for Resource Owner Password Flow)
+* select role under "Clients", convert it to "Composite Role" and assign it to realm (needed for Client Credentials Flow)
 
 ## Acquire Access Token
 
+### Resource Owner Password Flow
+
 curl -X POST --header "Content-Type: application/x-www-form-urlencoded" --data-urlencode "grant_type=password" --data-urlencode "client_id=testclient" --data-urlencode "client_secret=<client_secret>" --data-urlencode "username=testuser" --data-urlencode "password=password" "http://localhost:8080/auth/realms/testrealm/protocol/openid-connect/token"
+
+### Client Credentials Flow
+
+curl -X POST --header "Content-Type: application/x-www-form-urlencoded" --data-urlencode "grant_type=client_credentials" --data-urlencode "client_id=testclient" --data-urlencode "client_secret=<client_secret>" "http://localhost:8080/auth/realms/testrealm/protocol/openid-connect/token"
 
 ## Call protected API
 
